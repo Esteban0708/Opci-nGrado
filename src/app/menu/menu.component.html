@@ -1,0 +1,60 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div class="barratitulo">
+  <h3>
+    <img src="https://png.pngtree.com/png-vector/20190420/ourmid/pngtree-information-vector-icon-png-image_963445.jpg" alt="Icono de información">
+    Extensión y Proyección Social
+  </h3>
+</div>
+
+<div class="barraRecargarpagina">
+  <h3>
+    <img src="https://cdn.icon-icons.com/icons2/1094/PNG/512/reload_78477.png" alt="Icono de recarga">
+    <span class="recargarTexto" (click)="reloadPage()">Recargar Página</span>
+  </h3>
+</div>
+
+<div class="barraReducida" *ngIf="!isSidebarVisible" (click)="toggleSidebar()">
+  <h3>Proyectos de Extensión<i class="fa-solid fa-chevron-down icono"></i></h3>
+</div>
+
+<div class="sidebar" *ngIf="isSidebarVisible" (click)="toggleSidebar()">
+  <h2>
+    <i class="fa-regular fa-user"></i>
+    Panel de Información 
+    <i class="fa-solid fa-chevron-up" (click)="toggleSidebar()"></i>
+  </h2>
+  <div class="InformacionPersonal">
+    <span class="bordeTexto">Información</span>
+  </div>
+  <h1><i class="fa-solid fa-bars"></i> Menú Principal</h1>
+  <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Convocatorias
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Crear Convocatorias</a></li>
+        <li><a class="dropdown-item" href="#">Ver Convocatorias</a></li>
+      </ul>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        Proyectos
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Inscripción de Grupo</a></li>
+        <li><a class="dropdown-item" href="#">Gestionar Proyecto</a></li>
+      </ul>
+    </div>
+    <button type="button" class="btn btn-primary">Indicadores de Cobertura</button>
+    <button type="button" class="btn btn-primary">Usuarios</button>
+  </div>
+  <div id="informacionUniversidad">
+    <span>© 2024 <a href="https://www.uniamazonia.edu.co/inicio/index.php/es/">Universidad de la Amazonia</a> - Todos los derechos reservados</span>
+  </div>
+</div>
+<app-principal></app-principal>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
