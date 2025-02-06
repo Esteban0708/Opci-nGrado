@@ -1,0 +1,75 @@
+<div class="main-container" [ngClass]="{'with-sidebar': !isSidebarReduced, 'without-sidebar': isSidebarReduced}">
+  <header class="main-header">
+    <img src="https://cdn-icons-png.freepik.com/256/943/943040.png?semt=ais_hybrid" class="img" alt=""> Crear Convocatoria  
+        <button class="btn btn-danger close-btn" (click)="Salir()">X</button>
+  </header>
+  <div class="mb-3 row g-0">
+    <label for="input" class="col-sm-2 col-form-label">Titulo Convocatoria: <span class="aste">(*)</span></label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="input">
+    </div>
+  </div>
+
+  <div class="mb-3 row d-flex align-items-center">
+    <div class="col-auto">
+      <label for="input1" class="col-form-label input1">URL Resolución: <span class="aste">(*)</span></label>
+    </div>
+    <div class="col-sm-5">
+      <input type="text" class="form-control custom-input" id="input1">
+    </div>
+
+    <div class="col-auto">
+      <label for="input2" class="col-form-label">N° Resolución: <span class="aste">(*)</span></label>
+    </div>
+    <div class="col-sm-5">
+      <input type="text" class="form-control custom-input" id="input2">
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label col-form-label" >Descripción:<span class="aste">(*)</span></label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="container mt-1">  
+    <div class="d-flex align-items-center pb-1" [ngClass]="{'border-bottom': isCollapsed}">
+        <h5 class="text mb-0 btn btn-link text-decoration-none" (click)="toggleCollapse()">Objetivos</h5>
+        <div class="flex-grow-1 border-bottom mx-2"></div> 
+        <button class="btn btn-link text-decoration-none" (click)="toggleCollapse()">
+            <span [innerHTML]="isCollapsed ? '▼' : '▲'"></span>
+        </button>
+    </div>
+
+    <div *ngIf="!isCollapsed" class="border rounded mt-2 p-3 table-container expanded">
+      <div class="d-flex justify-content-end mb-3">
+        <button type="button" class="btn btn-success">Crear Objetivo</button>
+      </div>      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Objetivos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+           
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+          </tr>
+        </tbody>
+      </table>    
+    </div>
+    
+<select class="form-select" aria-label="Default select example">
+  <option selected>Open this select menu</option>
+  <option value="1">One</option>
+  <option value="2">Two</option>
+  <option value="3">Three</option>
+</select>
+
+
+</div>

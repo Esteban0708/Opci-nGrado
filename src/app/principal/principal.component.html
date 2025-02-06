@@ -1,5 +1,68 @@
-<div class="hola">
-    <h2>Contenido Principal</h2>
-    <p>Aquí va el contenido principal de la página.</p>
+<!-- Fondo gris (overlay) y modal -->
+<div class="overlay" *ngIf="isModalOpen"></div>
+<div class="modal" *ngIf="isModalOpen">
+  <button class="close-button" (click)="closeModifyModal()">X</button>
+  <h2>Modificar Principal</h2>
+
+  <!-- Botón para agregar un nuevo input vacío -->
+  <button type="button" (click)="addElement()" class="btn btn-success">Agregar Texto</button>
+  <button type="button" class="btn btn-primary btn-margin" (click)="toggleImageOptions()">Agregar Img</button>
+
+  <!-- Opciones de imagen -->
+  <div *ngIf="showImageOptions" class="image-options">
+    <div class="option-box">
+      <button class="option-btn" (click)="triggerFileInput()">
+        <img src="https://icons.iconarchive.com/icons/custom-icon-design/flatastic-1/256/add-1-icon.png" width="100px">
+        <label>Subir Imagen</label>
+      </button>
+      <input type="file" #fileInput accept="image/*" (change)="handleFileInput($event)" style="display: none;" />
+    </div>
+    <div class="option-box">
+      <button class="option-btn" (click)="addCarousel()">
+        <img src="https://static.thenounproject.com/png/1729587-200.png" width="100px">
+        <label>Crear Carrusel</label>
+      </button>
+    </div>
   </div>
-  
+  <input type="file" #carouselFileInput accept="image/*" (change)="handleCarouselFileInput($event)" style="display: none;" multiple/>
+  <!-- Mostrar los elementos (inputs e imágenes) dentro del modal -->
+  <ng-container *ngFor="let item of elements; let i = index">
+    <div *ngIf="item.type === 'input'" class="input-container">
+      <input type="text" class="form-control" placeholder="Descripción" [(ngModel)]="item.content" />
+      <button (click)="removeElement(i)" class="btn btn-danger">X</button>
+    </div>
+    <div *ngIf="item.type === 'image'" class="image-container">
+      <img *ngIf="item.content" [src]="item.content" class="uploaded-image" alt="Imagen subida" />
+      <button (click)="removeElement(i)" class="btn btn-danger btn-dangerimg">×</button>
+    </div>
+    
+    <!-- Para el carrusel -->
+    <div *ngIf="item.type === 'carousel'" class="carousel-container">
+      <button (click)="removeElement(i)" class="btn btn-danger remove-carousel-btn">X</button>
+
+      <div id="carousel{{i}}" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div *ngFor="let img of item.images; let j = index; let first = first" class="carousel-item" [ngClass]="{'active': first}">
+            <img [src]="img" class="d-block w-100" alt="Imagen de carrusel">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" [attr.data-bs-target]="'#carousel'+i" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" [attr.data-bs-target]="'#carousel'+i" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+</div>
+
+<!-- Contenedor principal -->
+<div class="main-container" [ngClass]="{'with-sidebar': !isSidebarReduced, 'without-sidebar': isSidebarReduced}">
+  <header class="main-header"><img src="https://cdn-icons-png.flaticon.com/512/9825/9825997.png" style=" width: 35px; padding: 2px;">Proyectos de extensión y Proyección Social</header>
+  <div class="main-content">Contenido principal.</div>
+  <button class="btn btn-primary modify-button" (click)="openModifyModal()">Modificar Principal</button>
+</div>
