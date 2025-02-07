@@ -1,3 +1,67 @@
 <div class="main-container" [ngClass]="{'with-sidebar': !isSidebarReduced, 'without-sidebar': isSidebarReduced}">
-    <div class="main-content">VER Convocatorias.</div>
-  </div>
+  <header class="main-header">
+      <img src="https://hospitalyolombo.gov.co/wp-content/uploads/2021/02/logo-convocatoria.png" class="img" alt=""> Convocatorias 
+      <button class="btn btn-danger close-btn" (click)="Salir()">X</button>
+      <div class="general">General</div>
+    </header>
+
+    <div class="card">
+      <div class="circle-container">
+        <img src="https://udes.edu.co/images/micrositios/extension/proyeccion_social/cifras/proyectos.png" alt="Icono">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">V CONVOCATORIA DE PROYECTOS DE EXTENSIÓN Y PROYECCIÓN SOCIAL</h5>
+        <p class="card-text">Desde: 09-08-2024 - Hasta: 09-11-2025 | Estado<span class="estado">Activa</span></p>
+      </div>
+      <div class="card-links">
+        <a href="#">Inscribir Grupo</a>
+        <a [routerLink]="['/ver-convocatoria']">Ver más</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="circle-container">
+        <img src="https://udes.edu.co/images/micrositios/extension/proyeccion_social/cifras/proyectos.png" alt="Icono">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">V CONVOCATORIA DE PROYECTOS DE EXTENSIÓN Y PROYECCIÓN SOCIAL</h5>
+        <p class="card-text">Desde: 09-08-2024 - Hasta: 09-11-2024 | Estado:<span class="estado" id="inactiva">Inactiva</span></p>
+     
+      </div>
+      <div class="card-links">
+        <a href="#">Inscribir Grupo</a>
+        <a [routerLink]="['/ver-convocatoria']">Ver más</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="circle-container">
+        <img src="https://udes.edu.co/images/micrositios/extension/proyeccion_social/cifras/proyectos.png" alt="Icono">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">V CONVOCATORIA DE PROYECTOS DE EXTENSIÓN Y PROYECCIÓN SOCIAL</h5>
+        <p class="card-text">Desde: 09-08-2024 - Hasta: 09-11-2024| Estado: <span class="estado" id="inactiva">Inactiva</span></p>
+     
+      </div>
+      <div class="card-links">
+        <a href="#">Inscribir Grupo</a>
+        <a [routerLink]="['/ver-convocatoria']">Ver más</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="circle-container">
+        <img src="https://udes.edu.co/images/micrositios/extension/proyeccion_social/cifras/proyectos.png" alt="Icono">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">V CONVOCATORIA DE PROYECTOS DE EXTENSIÓN Y PROYECCIÓN SOCIAL</h5>
+        <p class="card-text">Desde: 09-08-2024 - Hasta: 09-11-2024 | Estado:<span class="estado" id="inactiva">Inactiva</span></p>
+     
+      </div>
+      <div class="card-links">
+        <a href="#">Inscribir Grupo</a>
+        <a [routerLink]="['/ver-convocatoria']">Ver más</a>
+      </div>
+    </div>
+    
+</div>

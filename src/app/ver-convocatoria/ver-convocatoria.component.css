@@ -1,0 +1,20 @@
+.main-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    margin-left: 16.2%;
+    margin-top: 4%;
+    width: 83.5%;
+    transition: margin-left 0.3s ease;
+    border: 1px solid rgb(193, 193, 193);
+    z-index: 0; 
+  }
+  .main-container.with-sidebar {
+    margin-left: 16.2%;
+  }
+  
+  .main-container.without-sidebar {
+    margin-left: 2.7%;
+    width: calc(100% - 3%);
+    max-width: 100%;
+  }

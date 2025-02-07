@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit  } from '@angular/core';
 import { MenuService } from 'src/services/menu.service';
 
 @Component({
-  selector: 'app-ver-convocatorias',
-  templateUrl: './ver-convocatorias.component.html',
-  styleUrls: ['./ver-convocatorias.component.css']
+  selector: 'app-ver-convocatoria',
+  templateUrl: './ver-convocatoria.component.html',
+  styleUrls: ['./ver-convocatoria.component.css']
 })
-export class VerConvocatoriasComponent implements OnInit{
- isSidebarReduced: boolean = false;
- isModalOpen: boolean = false;
+export class VerConvocatoriaComponent implements OnInit{
+isSidebarReduced: boolean = false;
+isModalOpen: boolean = false;
 
   constructor(private menuService: MenuService) {}
   
