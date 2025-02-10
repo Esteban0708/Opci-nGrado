@@ -40,18 +40,40 @@
 
       <div *ngIf="!isCollapsed" class="border rounded mt-2 p-3 table-container expanded">
         <div class="d-flex justify-content-end mb-3">
-          <button type="button" class="btn btn-success"  (click)="openModalObject()">Crear Objetivo</button>
+          <button type="button" class="btn btn-success"  (click)="openModalObject()">Objetivos</button>
           <!-- Modal -->
         <div class="modal fade" id="CrearObjetivos" tabindex="1" aria-labelledby="modalCrearLineaLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="modalCrearLineaLabel">Crear Línea de Produndización</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Crear un nuevo objetivo
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      <p>Ingrese la descripción del objetivo</p>
+                    <div class="mb-3">
+                      <textarea class="form-control" id="objetivo" rows="3" placeholder="Escriba el objetivo aquí..."></textarea>
+                  | </div>
+                </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Visualizar Objetivos
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                  </div>
+                </div>
+                
               </div>
-              <div class="modal-body">
-                <p>ESTEBABNNNNNNNNNNNNN</p>
-              </div>
+        
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                 <button type="button" class="btn btn-primary">Guardar cambios</button>

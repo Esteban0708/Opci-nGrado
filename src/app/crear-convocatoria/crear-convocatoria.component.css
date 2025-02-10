@@ -201,3 +201,10 @@ textarea {
 .modal {
   z-index: 9999 !important; 
 }
+.form-control{
+  position: relative;
+  margin-left: 0;
+  font-size: 13px;
+  font-family: Arial, sans-serif;
+
+}
