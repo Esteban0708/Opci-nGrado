@@ -44,7 +44,7 @@
         Proyectos
       </button>
       <ul *ngIf="isProyectosOpen">
-        <li><a class="dropdown-item" href="#">Inscripción de Grupo</a></li>
+        <li><a class="dropdown-item" [routerLink]="['inscripcion-grupo']">Inscripción de Grupo</a></li>
         <li><a class="dropdown-item" href="#">Gestionar Proyecto</a></li>
       </ul>
     </div>

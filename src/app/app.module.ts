@@ -4,12 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
-import { PrincipalComponent } from './principal/principal.component';
-import { CrearConvocatoriaComponent } from './crear-convocatoria/crear-convocatoria.component';
-import { VerConvocatoriasComponent } from './ver-convocatorias/ver-convocatorias.component';
-import { InscripcionGrupoComponent } from './inscripcion-grupo/inscripcion-grupo.component';
-import { VerConvocatoriaComponent } from './ver-convocatoria/ver-convocatoria.component';
+import { MenuComponent } from './view/menu/menu.component';
+import { PrincipalComponent } from './view/principal/principal.component';
+import { CrearConvocatoriaComponent } from './view/crear-convocatoria/crear-convocatoria.component';
+import { VerConvocatoriasComponent } from './view/ver-convocatorias/ver-convocatorias.component';
+import { InscripcionGrupoComponent } from './view/inscripcion-grupo/inscripcion-grupo.component';
+import { VerConvocatoriaComponent } from './view/ver-convocatoria/ver-convocatoria.component';
 
 @NgModule({
   declarations: [
