@@ -77,8 +77,7 @@ body {
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
-  height: 95px;
-  min-height: 100px;
+  height: 70px;
   width: 98%;
   margin: 5px 5px;
   overflow: hidden; 
@@ -132,6 +131,16 @@ body {
   margin-left: 5px;
 }
 
+.estado-activa {
+  background-color: #34AB1E; 
+  color: white;
+}
+
+.estado-inactiva {
+  background-color: #f67052; 
+  color: white;
+}
+
 #inactiva{
   background-color: #E47113;
 }
@@ -142,7 +151,8 @@ body {
   width: 40px; 
   height: 40px;
   position: relative;
-  top: 43px;
+  top: 38px;
+  left: 10px;
   border-radius: 50%;
   background-color: white;
   overflow: hidden;
@@ -156,5 +166,51 @@ body {
 }
 
 .card-body{
-  margin-left: 59px;
+  margin-left: 70px;
+}
+.filter-button{
+  background-color: white;
+  border: 1px solid rgb(196, 193, 193) ;
+  border-radius: 5px;
+  margin-top: 6px;
+  padding: 5px;
+  font-size: 13px;
+  position: relative;
+  left: 92%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.filter-button:hover{
+  background-color: #7399f8;
+  color: white;
+}
+.filter-options{
+  width: 120px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  margin-top: 6px;
+  padding: 5px;
+  font-size: 12px;
+  position: relative;
+  left: 87%; 
+  align-items: center;
+  text-align: center;
+  display: flex; 
+  flex-direction: row; 
+  gap: 5px; 
+
+}
+
+.filter-options button{
+  background-color: white;
+  gap: 100px;
+  border: 1px solid rgb(196, 193, 193) ;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.filter-options button:hover{
+  background-color: #7399f8;
+  color: white;
 }
