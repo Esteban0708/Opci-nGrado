@@ -10,7 +10,7 @@ const routes: Routes = [
   { path : '', redirectTo:'/principal', pathMatch: 'full'},
   { path : 'crear-convocatoria', component: CrearConvocatoriaComponent},
   { path : 'ver-convocatorias', component: VerConvocatoriasComponent},
-  { path : 'ver-convocatoria', component: VerConvocatoriaComponent},
+  { path: 'ver-convocatoria', component: VerConvocatoriaComponent },
   { path : 'inscripcion-grupo', component: InscripcionGrupoComponent},
   { path: 'principal', component: PrincipalComponent}
 ];

@@ -27,7 +27,7 @@
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label col-form-label" >Descripción:<span class="aste">(*)</span></label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
     <div class="container mt-1">  
       <div class="d-flex align-items-center pb-1" [ngClass]="{'border-bottom': isCollapsed}">
@@ -56,8 +56,8 @@
                     <div class="accordion-body">
                       <p>Ingrese la descripción del objetivo</p>
                     <div class="mb-3">
-                      <textarea class="form-control" id="objetivo" rows="3" placeholder="Escriba el objetivo aquí..."></textarea>
-                  | </div>
+                      <textarea class="form-control object" id="objetivo" rows="3" placeholder="Escriba el objetivo aquí..."></textarea>
+                  </div>
                 </div>
                   </div>
                 </div>
@@ -68,8 +68,29 @@
                     </button>
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-                  </div>
+                    <div class="mb-3 visualizar-objetivos">
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="1">
+                          <span>Fomentar la educación continua</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="2">
+                          <span>Impulsar el desarrollo comunitario</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="3">
+                          <span>Apoyar el emprendimiento local</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="4">
+                          <span>Promover la inclusión social</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="5">
+                          <span>Fortalecer la vinculación universidad-sociedad</span>
+                      </label>
+                  </div>       
+                </div>
                 </div>
                 
               </div>
@@ -128,12 +149,22 @@
         </div>
       </div>
       
-    <select class="form-select" aria-label="Default select example">
-      <option selected>Selecciona</option>
-      <option value="1">Innovación Educativa.</option>
-      <option value="2">Desarrollo Sostenible.</option>
-      <option value="3">Tecnologia y Sociedad</option>
-    </select>
+      <select class="form-select selectlineas" [(ngModel)]="selectedOption" (change)="updateBox()">
+        <option selected disabled placeholder="Selecciona">Selecciona</option>
+        
+        <option value="Innovación Educativa">Innovación Educativa</option>
+        <option value="Desarrollo Sostenible">Desarrollo Sostenible</option>
+        <option value="Tecnología y Sociedad">Tecnología y Sociedad</option>
+        <option value="Tecnold">Tecnolog</option>
+      </select>
+      
+      <div class="custom-box cuadroLineas">
+        <span *ngFor="let option of selectedOptions; let i = index" class="selected-item">
+          {{ option }} 
+          <button type="button" class="close-btn" (click)="removeOption(i)">X</button>
+        </span>
+      </div>
+      
     <div class="select">
     <label for="input" class="col-sm-2 col-form-label">Modalidad: <span class="aste">(*)</span></label>
     <select class="form-select" aria-label="Default select example">
@@ -143,6 +174,8 @@
       <option value="3">Educacion Continua</option>
     </select>
   </div>  
+  
+  
   <div class="container mt-3">
     <div class="d-flex align-items-center gap-3">
       <div class="input-group">

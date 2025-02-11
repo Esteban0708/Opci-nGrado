@@ -1,5 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
-import { MenuService } from 'src/services/menu.service';
+import { MenuService } from 'src/app/service/services/menu.service';
 
 @Component({
   selector: 'app-ver-convocatoria',

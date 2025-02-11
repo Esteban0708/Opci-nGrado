@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from 'src/services/menu.service';
+import { MenuService } from 'src/app/service/services/menu.service';
 declare var bootstrap: any;
 @Component({
   selector: 'app-crear-convocatoria',
@@ -47,7 +47,19 @@ export class CrearConvocatoriaComponent implements OnInit {
     }
   }
   
-  
+  selectedOption: string = "";
+  selectedOptions: string[] = [];
+
+  updateBox() {
+    if (this.selectedOption && !this.selectedOptions.includes(this.selectedOption)) {
+      this.selectedOptions.push(this.selectedOption);
+    }
+    this.selectedOption = ""; 
+  }
+
+  removeOption(index: number) {
+    this.selectedOptions.splice(index, 1);
+  }
 
   Salir() {
     window.location.href = '/principal';
