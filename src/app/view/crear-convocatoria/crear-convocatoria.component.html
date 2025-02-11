@@ -1,0 +1,204 @@
+  <div class="main-container" [ngClass]="{'with-sidebar': !isSidebarReduced, 'without-sidebar': isSidebarReduced}">
+    <header class="main-header">
+      <img src="https://cdn-icons-png.freepik.com/256/943/943040.png?semt=ais_hybrid" class="img" alt=""> Crear Convocatoria  
+          <button class="btn btn-danger close-btn" (click)="Salir()">X</button>
+    </header>
+    <div class="mb-3 row g-0">
+      <label for="input" class="col-sm-2 col-form-label">Titulo Convocatoria: <span class="aste">(*)</span></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="input">
+      </div>
+    </div>
+
+    <div class="mb-3 row d-flex align-items-center">
+      <div class="col-auto">
+        <label for="input1" class="col-form-label input1">URL Resolución: <span class="aste">(*)</span></label>
+      </div>
+      <div class="col-sm-5">
+        <input type="text" class="form-control custom-input" id="input1">
+      </div>
+
+      <div class="col-auto">
+        <label for="input2" class="col-form-label">N° Resolución: <span class="aste">(*)</span></label>
+      </div>
+      <div class="col-sm-5">
+        <input type="text" class="form-control custom-input" id="input2">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label col-form-label" >Descripción:<span class="aste">(*)</span></label>
+      <textarea class="form-control textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div class="container mt-1">  
+      <div class="d-flex align-items-center pb-1" [ngClass]="{'border-bottom': isCollapsed}">
+          <h5 class="text mb-0 btn btn-link text-decoration-none" (click)="toggleCollapse()">Objetivos</h5>
+          <div class="flex-grow-1 border-bottom mx-2"></div> 
+          <button class="btn btn-link text-decoration-none" (click)="toggleCollapse()">
+              <span [innerHTML]="isCollapsed ? '▼' : '▲'"></span>
+          </button>
+      </div>
+
+      <div *ngIf="!isCollapsed" class="border rounded mt-2 p-3 table-container expanded">
+        <div class="d-flex justify-content-end mb-3">
+          <button type="button" class="btn btn-success"  (click)="openModalObject()">Objetivos</button>
+          <!-- Modal -->
+        <div class="modal fade" id="CrearObjetivos" tabindex="1" aria-labelledby="modalCrearLineaLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      Crear un nuevo objetivo
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                      <p>Ingrese la descripción del objetivo</p>
+                    <div class="mb-3">
+                      <textarea class="form-control object" id="objetivo" rows="3" placeholder="Escriba el objetivo aquí..."></textarea>
+                  </div>
+                </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Visualizar Objetivos
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                    <div class="mb-3 visualizar-objetivos">
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="1">
+                          <span>Fomentar la educación continua</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="2">
+                          <span>Impulsar el desarrollo comunitario</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="3">
+                          <span>Apoyar el emprendimiento local</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="4">
+                          <span>Promover la inclusión social</span>
+                      </label>
+                      <label class="checkbox-btn">
+                          <input type="checkbox" name="objetivos" value="5">
+                          <span>Fortalecer la vinculación universidad-sociedad</span>
+                      </label>
+                  </div>       
+                </div>
+                </div>
+                
+              </div>
+        
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar cambios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>    
+          <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Objetivos</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+            
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+            </tr>
+          </tbody>
+        </table>    
+      </div>
+      <div class="select">
+        <label for="input1" class="lineas">Lineas de Produndización </label>
+        <button type="button" class="btn btn-success crear" (click)="openModal()">Crear Linea</button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="modalCrearLinea" tabindex="1" aria-labelledby="modalCrearLineaLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalCrearLineaLabel">Crear Línea de Produndización</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Escribe aquí los detalles para crear una nueva línea de profundización.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Guardar cambios</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <select class="form-select selectlineas" [(ngModel)]="selectedOption" (change)="updateBox()">
+        <option selected disabled placeholder="Selecciona">Selecciona</option>
+        
+        <option value="Innovación Educativa">Innovación Educativa</option>
+        <option value="Desarrollo Sostenible">Desarrollo Sostenible</option>
+        <option value="Tecnología y Sociedad">Tecnología y Sociedad</option>
+        <option value="Tecnold">Tecnolog</option>
+      </select>
+      
+      <div class="custom-box cuadroLineas">
+        <span *ngFor="let option of selectedOptions; let i = index" class="selected-item">
+          {{ option }} 
+          <button type="button" class="close-btn" (click)="removeOption(i)">X</button>
+        </span>
+      </div>
+      
+    <div class="select">
+    <label for="input" class="col-sm-2 col-form-label">Modalidad: <span class="aste">(*)</span></label>
+    <select class="form-select" aria-label="Default select example">
+      <option selected>Selecciona</option>
+      <option value="1">Actividades Artisticas, Culturales y Recreativas</option>
+      <option value="2">Proyectos de extension Solidaria</option>
+      <option value="3">Educacion Continua</option>
+    </select>
+  </div>  
+  
+  
+  <div class="container mt-3">
+    <div class="d-flex align-items-center gap-3">
+      <div class="input-group">
+        <label for="fechaInicio" class="col-form-label">Fecha Inicio: <span class="aste">(*)</span></label>
+        <input type="date" class="form-control" id="fechaInicio" [(ngModel)]="fechaInicio">
+      </div>
+
+      <div class="input-group">
+        <label for="fechaFin" class="col-form-label">Fecha Fin: <span class="aste">(*)</span></label>
+        <input type="date" class="form-control" id="fechaFin" [(ngModel)]="fechaFin">
+      </div>
+
+      <div class="input-group">
+        <label for="duracion" class="col-form-label">Duración <span class="aste">(Horas)</span>:</label>
+        <input type="text" class="form-control" id="duracion" >
+      </div>
+    </div>
+  </div>
+  <div class="botonesfinales">
+    <button type="button" class="btn btn-success">Volver</button>
+    <button type="button" class="btn btn-primary">Guardar</button>
+  </div>
+
+  </div>
+
+  </div>
